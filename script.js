@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 async function submitForm() {
-  // updateImg()
+  updateImg()
   document.getElementById("result").textContent = "Loading... Please Wait... :D";
 
   console.log('--submitForm() RUNNING')
