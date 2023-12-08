@@ -137,8 +137,8 @@ function updateImg() {
   console.log(Role)
   console.log(genre)
 
-  roleImgLink = `/dnd_img/dnd_${Role}_01.png`
-  genreImgLink = `/dnd_img/dnd_bg_${genre}_01.png`
+  roleImgLink = `/23LAB_Dec11_DndApi/dnd_img/dnd_${Role}_01.png`
+  genreImgLink = `/23LAB_Dec11_DndApi/dnd_img/dnd_bg_${genre}_01.png`
 
   console.log(roleImgLink)
   console.log(genreImgLink)
