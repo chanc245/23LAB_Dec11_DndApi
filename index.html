@@ -10,10 +10,11 @@
 </head>
 
 <body>
+  <img id="bg-img" src="">
   <form id="myForm">
     <label for="nickName">Name:</label>
     <input type="text" id="nickName" placeholder="Enter your Nick Name">
-    <br>
+    <!-- <br> -->
     <label for="Role"> Role: </label>
     <select id="Role">
       <option value="Role">Select a Role</option>
@@ -26,7 +27,7 @@
       <option value="Sorcerer">Sorcerer</option>
       <option value="wizard">Wizard</option>
     </select>
-    <br>
+    <!-- <br> -->
 
     <label for="genre"> Genre: </label>
     <select id="genre">
@@ -36,11 +37,32 @@
       <option value="horror">Horror</option>
       <option value="mystery">Mystery</option>
     </select>
-    <br>
+    <!-- <br> -->
     <button type="button" onclick="submitForm()">Submit</button>
   </form>
 
-  <div id="result">Result Place Holder</div>
+  <div id="result-container">
+    <div class="character-bg">
+      <div id="result"></div>
+      <div class="character-container">
+        <img id="character-img" src="">
+        <div class="character-card">
+          <h1 id="name"></h1>
+          <!-- <h2 id="title"></h2> -->
+          <h3 id="role"></h3>
+          <div class="ability-scores">
+            <div><span id="strength"></span></div>
+            <div><span id="dexterity"></span></div>
+            <div><span id="constitution"></span></div>
+            <div><span id="intelligence"></span></div>
+            <div><span id="wisdom"></span></div>
+            <div><span id="charisma"></span></div>
+          </div>
+        </div>
+      </div>
+      <div id="background"></div>
+    </div>
+  </div>
 
   <script src="script.js" defer></script>
 </body>

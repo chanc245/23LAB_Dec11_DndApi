@@ -1,0 +1,89 @@
+html {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+
+}
+
+.character-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* gap: 20px; */
+  border: 1px solid #ccc;
+
+  margin: 0%;
+
+  max-width: 700px;
+}
+
+#background {
+  max-width: 500px;
+}
+
+#bg-img {
+  opacity: 0.2;
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+  /* object-fit: cover; */
+
+  z-index: -1;
+}
+
+.character-bg {
+  align-items: center;
+  justify-content: center;
+
+  margin: 3%
+}
+
+#character-img {
+  max-width: 300px;
+
+  height: auto;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.character-card {
+  padding: 20px;
+  /* margin-top: 20px; */
+  /* background-color: #f9f9f9; */
+}
+
+.character-card h1,
+.character-card h2,
+.character-card h3 {
+  margin: 5px 0;
+}
+
+.ability-scores {
+  margin-top: 20px;
+}
+
+.ability-scores div {
+  margin-bottom: 5px;
+}
+
+.ability-scores span {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.ability-scores span:nth-child(2) {
+  font-weight: normal;
+}

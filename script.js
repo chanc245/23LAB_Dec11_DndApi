@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 async function submitForm() {
+  // updateImg()
   document.getElementById("result").textContent = "Loading... Please Wait... :D";
 
   console.log('--submitForm() RUNNING')
@@ -24,7 +25,7 @@ async function submitForm() {
     console.log('--response FETCHED')
 
     const resultContainer = document.getElementById('result')
-    resultContainer.textContent = ''
+    // resultContainer.textContent = ''
 
     if (response.ok) {
       console.log('--response OK')
@@ -34,10 +35,14 @@ async function submitForm() {
       const message = jsonData.gpt;
       characterString = message;
 
-      document.getElementById("result").innerHTML = message;
+      // document.getElementById("result").innerHTML = message;
+      getVar(message); //isolating every variable
+      updateData();
+      updateImg();
+      document.getElementById("result").textContent = "Enjoy your DnD Chracter Card :)";
+
       console.log('--html UPDATED')
 
-      getVar(message);
     } else {
       resultContainer.textContent = "Error in submitting data. Please try again.."
     }
@@ -60,6 +65,19 @@ let intelligence = ""
 let wisdom = ""
 let charisma = ""
 
+// let characterString = 'Justin';
+// let parts = characterString.split("<br>");
+// let nickname = "The Thinker";
+// let role = "Artificer";
+// let genre = ""
+
+// let strength = "10";
+// let dexterity = "14";
+// let constitution = "12";
+// let intelligence = "16";
+// let wisdom = "10";
+// let charisma = "12";
+// let background = "Justin, also known as \"The Enigma\", is a master of mystery and intrigue. Hailing from a small town, Justin's natural curiosity and intelligence led him to study the art of artifice, creating intricate and enigmatic mechanical devices. His talents and reputation as a master of the arcane arts have made him a sought-after figure in the world of mystery and intrigue.Justin's enigmatic nature and aloof demeanor have made him a mysterious and enigmatic figure in the world of artifice. His talents are unparalleled, and his knowledge of ancient artifacts and forgotten lore make him a valuable asset to those seeking his aid. Justin's true motives and loyalties, however, are often shrouded in mystery, leading many to wonder if he can be trusted.Though his motivations may seem unclear, Justin's skill in his craft is unmatched. His ability to create and manipulate arcane devices makes him a valuable ally in the world of mystery and danger. With his enigmatic nature and knack for unraveling the unknown, Justin is a force to be reckoned with in the shadows of mystery.";
 
 function getVar(data) {
   let characterString = data
@@ -73,7 +91,7 @@ function getVar(data) {
     return null;
   }
 
-  nickname = extractData("Nickname");
+  // nickname = extractData("Nickname");
   role = extractData("Role");
   genre = extractData("Genre");
 
@@ -97,5 +115,36 @@ function getVar(data) {
   console.log("Wisdom:", wisdom);
   console.log("Charisma:", charisma);
   console.log("Background:", background);
+}
+
+function updateData() {
+  document.getElementById('name').innerText = document.getElementById("nickName").value;
+  // document.getElementById('title').innerText = nickname;
+  document.getElementById('role').innerText = document.getElementById("Role").value;
+  document.getElementById('strength').innerText = `Strength:${strength}`;
+  document.getElementById('dexterity').innerText = `Dexterity:${dexterity}`;
+  document.getElementById('constitution').innerText = `Constitution:${constitution}`;
+  document.getElementById('intelligence').innerText = `Intelligence:${intelligence}`;
+  document.getElementById('wisdom').innerText = `Wisdom: ${wisdom}`;
+  document.getElementById('charisma').innerText = `Charisma:${charisma}`;
+  document.getElementById('background').innerText = `Background Stody:\n${background}`;
+}
+
+function updateImg() {
+  const Role = document.getElementById("Role").value;
+  const genre = document.getElementById("genre").value;
+
+  console.log(Role)
+  console.log(genre)
+
+  roleImgLink = `/dnd_img/dnd_${Role}_01.png`
+  genreImgLink = `/dnd_img/dnd_bg_${genre}_01.png`
+
+  console.log(roleImgLink)
+  console.log(genreImgLink)
+
+
+  document.getElementById('bg-img').src = genreImgLink
+  document.getElementById('character-img').src = roleImgLink
 }
 
